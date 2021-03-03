@@ -1,10 +1,24 @@
+import 'package:youtube_live_stream_api/youtube_live_stream_api.dart';
+
 abstract class YoutubeLiveStreamState {}
 
-class YoutubeLiveStreamLoading extends YoutubeLiveStreamState{}
+class YoutubeLiveStreamBusy extends YoutubeLiveStreamState {}
 
-class YoutubeLiveStreamLoadSuccess extends YoutubeLiveStreamState{}
+class YoutubeLiveStreamLoading extends YoutubeLiveStreamState {}
 
-class YoutubeLiveStreamInsertSuccess extends YoutubeLiveStreamState{}
+class YoutubeLiveStreamLoadSuccess extends YoutubeLiveStreamState {
 
-class YoutubeLiveStreamDeleteSuccess extends YoutubeLiveStreamState{}
+  YoutubeLiveStreamLoadSuccess({this.liveBroadcasts});
+  final List<LiveBroadcast> liveBroadcasts;
 
+}
+
+class YoutubeLiveStreamInsertSuccess extends YoutubeLiveStreamState {}
+
+class YoutubeLiveStreamDeleteSuccess extends YoutubeLiveStreamState {}
+
+class YoutubeLiveStreamLoadFailure extends YoutubeLiveStreamState {
+  YoutubeLiveStreamLoadFailure({this.error});
+
+  final String error;
+}

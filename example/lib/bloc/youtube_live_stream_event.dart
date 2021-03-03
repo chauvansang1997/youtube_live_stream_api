@@ -11,6 +11,11 @@ class YoutubeLiveStreamLoaded extends YoutubeLiveStreamEvent {
 
 class YoutubeLiveStreamRefreshed extends YoutubeLiveStreamEvent {}
 
-class YoutubeLiveStreamInserted extends YoutubeLiveStreamEvent {}
+class YoutubeLiveStreamInserted extends YoutubeLiveStreamEvent {
+  YoutubeLiveStreamInserted({@required this.title, this.description});
+
+  final String title;
+  final String description;
+}
 
 class YoutubeLiveStreamDeleted extends YoutubeLiveStreamEvent {}
